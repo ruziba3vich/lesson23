@@ -1,0 +1,1 @@
+SELECT id, name, age, department FROM Persons;
