@@ -1,0 +1,1 @@
+SELECT p.name, p.department FROM Persons p;
