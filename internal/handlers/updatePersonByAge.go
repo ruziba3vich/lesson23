@@ -5,14 +5,18 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/ruziba3vich/databaseLesson/internal/models"
 	"github.com/ruziba3vich/databaseLesson/internal/services"
 )
 
-func UpdatePersonByAge(c *gin.Context, db *sql.DB) {
-	var idAndAge models.IdAndAge
+func UpdatePersonByAge(c *gin.Context, id int, db *sql.DB) {
+	var age int
 
-	person, err := services.UpdatePersonByAgeService(idAndAge.Id, idAndAge.Age, db)
+	if err := c.ShouldBindJSON(&age); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err})
+		return
+	}
+
+	person, err := services.UpdatePersonByAgeService(id, age, db)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err})
 		return

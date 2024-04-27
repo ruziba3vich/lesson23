@@ -8,12 +8,7 @@ import (
 	"github.com/ruziba3vich/databaseLesson/internal/services"
 )
 
-func DeletePersonHandler(c *gin.Context, db *sql.DB) {
-	var id int
-	if err := c.ShouldBindJSON(&id); err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": err})
-		return
-	}
+func DeletePersonHandler(c *gin.Context, id int, db *sql.DB) {
 	err := services.DeletePersonByIdService(id, db)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err})

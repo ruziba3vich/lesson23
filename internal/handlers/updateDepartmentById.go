@@ -5,17 +5,16 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/ruziba3vich/databaseLesson/internal/models"
 	"github.com/ruziba3vich/databaseLesson/internal/services"
 )
 
-func UpdateDepartmentById(c *gin.Context, db *sql.DB) {
-	var idAndDepartment models.IdAndDepartment
-	if err := c.ShouldBindJSON(&idAndDepartment); err != nil {
+func UpdateDepartmentById(c *gin.Context, id int, db *sql.DB) {
+	var department string
+	if err := c.ShouldBindJSON(&department); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err})
 		return
 	}
-	result, err := services.UpdateDepartmentById(idAndDepartment.Id, idAndDepartment.Depatment, db)
+	result, err := services.UpdateDepartmentById(id, department, db)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err})
 	}
