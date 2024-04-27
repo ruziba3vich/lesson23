@@ -22,19 +22,25 @@ Xodimlar jadvalidan faqat name va department ustunlarini oling.
 Ma'lumotlarni yangilash:
 
 Biron bir id (identifikatorga) ega bo'lgan xodimning yoshini yangilang.
+#
 
 Xodimning bo'limini ma'lum bir nom bilan yangilang.
+#
 Ma'lumotlarni o'chirish:
 
 Xodimlar jadvalidan ma'lum bir id ega bo'lgan xodimni o'chirib tashlang:
+#
 Saralash va cheklash:
 
 Yosh bo'yicha saralangan barcha xodimlarni o'sish tartibida oling
+#
 
 Eng qadimgi 5 nafar xodimni toping.
+#
 WHERE bandi bilan filtrlash:
 
 Ismlari "A" harfi bilan boshlangan xodimlarni oling.
+#
 
 25 yoshdan 35 yoshgacha bo'lgan xodimlarni oling.
 Agregat funktsiyalari

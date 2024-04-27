@@ -6,9 +6,7 @@ import (
 	"os"
 )
 
-// getNameAndDepartmentOnly.sql
-
-func getNameAndDepartmentOnlyService(db *sql.DB) (persons []models.NameAndDepartmentObject, e error) {
+func GetPeopleInIncreasingOrderService(db *sql.DB) ([]models.Person, error) {
 	fileName := "../db/getNameAndDepartmentOnly.sql"
 	file, err := os.ReadFile(fileName)
 
@@ -20,14 +18,22 @@ func getNameAndDepartmentOnlyService(db *sql.DB) (persons []models.NameAndDepart
 	if err != nil {
 		return nil, err
 	}
+	defer rows.Close()
+
+	var persons []models.Person
 
 	for rows.Next() {
-		var person models.NameAndDepartmentObject
-		err := rows.Scan(&person.Name, &person.Department)
+		var person models.Person
+		err := rows.Scan(&person.Id, &person.Name, &person.Age, &person.Department)
 		if err != nil {
 			return nil, err
 		}
 		persons = append(persons, person)
 	}
+
+	if err := rows.Err(); err != nil {
+		return nil, err
+	}
+
 	return persons, nil
 }

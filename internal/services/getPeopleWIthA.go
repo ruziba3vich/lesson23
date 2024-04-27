@@ -6,10 +6,8 @@ import (
 	"os"
 )
 
-// getNameAndDepartmentOnly.sql
-
-func getNameAndDepartmentOnlyService(db *sql.DB) (persons []models.NameAndDepartmentObject, e error) {
-	fileName := "../db/getNameAndDepartmentOnly.sql"
+func GetPeopleStartingWithA(db *sql.DB) (persons []models.Person, e error) {
+	fileName := "../db/getPersonsByNameA.sql"
 	file, err := os.ReadFile(fileName)
 
 	if err != nil {
@@ -22,8 +20,8 @@ func getNameAndDepartmentOnlyService(db *sql.DB) (persons []models.NameAndDepart
 	}
 
 	for rows.Next() {
-		var person models.NameAndDepartmentObject
-		err := rows.Scan(&person.Name, &person.Department)
+		var person models.Person
+		err := rows.Scan(&person.Id, &person.Name, &person.Age, &person.Department)
 		if err != nil {
 			return nil, err
 		}
