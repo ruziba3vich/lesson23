@@ -2,13 +2,14 @@ package services
 
 import (
 	"database/sql"
-	"lesson23/internal/models"
 	"os"
+
+	"github.com/ruziba3vich/databaseLesson/internal/models"
 )
 
 // getNameAndDepartmentOnly.sql
 
-func getNameAndDepartmentOnlyService(db *sql.DB) (persons []models.NameAndDepartmentObject, e error) {
+func GetNameAndDepartmentOnlyService(db *sql.DB) (persons []models.NameAndDepartmentObject, e error) {
 	fileName := "../db/getNameAndDepartmentOnly.sql"
 	file, err := os.ReadFile(fileName)
 

@@ -2,11 +2,11 @@ package services
 
 import (
 	"database/sql"
-	"lesson23/internal/models"
+	"github.com/ruziba3vich/databaseLesson/internal/models"
 	"os"
 )
 
-func CreatePersonHandler(person models.Person, db *sql.DB) (*models.Person, error) {
+func CreatePersonService(person models.Person, db *sql.DB) (*models.Person, error) {
 	fileName := "../db/createNewPerson.sql"
 	file, err := os.ReadFile(fileName)
 

@@ -2,7 +2,7 @@ package services
 
 import (
 	"database/sql"
-	"lesson23/internal/models"
+	"github.com/ruziba3vich/databaseLesson/internal/models"
 	"os"
 )
 

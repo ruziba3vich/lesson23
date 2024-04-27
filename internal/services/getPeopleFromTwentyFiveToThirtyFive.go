@@ -2,15 +2,12 @@ package services
 
 import (
 	"database/sql"
-	"os"
-
 	"github.com/ruziba3vich/databaseLesson/internal/models"
+	"os"
 )
 
-// getOlderThanThirty.sql
-
-func GetOlderThanThirtyService(db *sql.DB) (persons []models.Person, e error) {
-	fileName := "../db/getOlderThanThirty.sql"
+func GetPersonsFromTwentyFiveToThirtyFive(db *sql.DB) (persons []models.Person, e error) {
+	fileName := "../db/twentyFiveToThirtyFive.sql"
 	file, err := os.ReadFile(fileName)
 
 	if err != nil {

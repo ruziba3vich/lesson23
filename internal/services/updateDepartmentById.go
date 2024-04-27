@@ -2,13 +2,14 @@ package services
 
 import (
 	"database/sql"
-	"lesson23/internal/models"
 	"os"
+
+	"github.com/ruziba3vich/databaseLesson/internal/models"
 )
 
 // updateDepartmentById
 
-func updateDepartmentById(id int, newDepartment string, db *sql.DB) (*models.Person, error) {
+func UpdateDepartmentById(id int, newDepartment string, db *sql.DB) (*models.Person, error) {
 	fileName := "../db/updatePersonByAge.sql"
 	file, err := os.ReadFile(fileName)
 

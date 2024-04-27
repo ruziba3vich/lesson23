@@ -43,9 +43,13 @@ Ismlari "A" harfi bilan boshlangan xodimlarni oling.
 #
 
 25 yoshdan 35 yoshgacha bo'lgan xodimlarni oling.
+#
 Agregat funktsiyalari
 
 Barcha xodimlarning o'rtacha yoshini hisoblang.
+#
 
 Har bir bo'limdagi xodimlar sonini hisoblang.
+#
+
 Barcha yo'zilgan SQL code fayli va chiqarilgan natijasi bilan screenshot qilib to'pshiring

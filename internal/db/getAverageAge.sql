@@ -1,0 +1,1 @@
+SELECT AVG(p.age) FROM Persons p;
